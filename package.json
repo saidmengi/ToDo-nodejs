@@ -1,0 +1,17 @@
+{
+    "name": "agproje",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "nodemon app.js"
+    },
+    "dependencies": {
+        "@feathersjs/cli": "^3.9.0",
+        "body-parser": "^1.19.0",
+        "ejs": "^2.6.1",
+        "feathers": "^2.2.4",
+        "feathers-mongodb": "^4.0.4",
+        "feathers-rest": "^1.8.1",
+        "feathers-socketio": "^2.0.1",
+        "mongodb": "^3.2.3"
+    }
+}

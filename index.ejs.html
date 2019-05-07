@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Feathers real-time Todos</title>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container" id="todos">
+  <h1>Feathers real-time Todos</h1>
+
+  <ul class="todos list-unstyled">
+    <% todos.forEach(function(todo) { %>
+    <li class="page-header checkbox" data-todo-id="<%= todo._id %>">
+      <label>
+        <input type="checkbox" name="complete" <% if(todo.complete) { %>checked="checked"<% } %>>
+        <%= todo.text %>
+      </label>
+      <a href="javascript://" class="pull-right delete">
+        <span class="glyphicon glyphicon-remove"></span>
+      </a>
+    </li>
+    <% }) %>
+  </ul>
+  <form role="form" class="create-todo">
+    <div class="form-group">
+      <input type="text" class="form-control" name="description" placeholder="Add a new Todo">
+    </div>
+    <button type="submit" class="btn btn-info col-md-12">Add Todo</button>
+  </form>
+</div>
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io();
+</script>
+</body>
+</html>
